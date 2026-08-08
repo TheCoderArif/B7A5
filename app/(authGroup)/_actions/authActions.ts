@@ -1,6 +1,9 @@
 "use server"
 
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+
+import jwt, { JwtPayload } from "jsonwebtoken"
 
 type LoginState ={
     success : true,
@@ -13,17 +16,17 @@ type LoginState ={
 }
 
 
-export const loginAction = async (prevState : LoginState, formData : FormData) => {
+export const loginAction = async (prevState : LoginState, formData : FormData)  => {
 
-    console.log(formData);
-    console.log(prevState);
+    // console.log(formData);
+    // console.log(prevState);
 
     const email = formData.get("email");
     const password = formData.get("password");
 
     const payload = {email, password}
 
-    console.log(email, password);
+    // console.log(email, password);
 
     const res = await fetch(`${process.env.BACKEND_API_URL}/api/auth/login`,{
         method: "POST",
@@ -34,7 +37,7 @@ export const loginAction = async (prevState : LoginState, formData : FormData) =
 
     });
 
-    const result : LoginState =await res.json();
+    const result : LoginState = await res.json();
 
     // console.log(result);
     if (result.success){
@@ -52,6 +55,21 @@ export const loginAction = async (prevState : LoginState, formData : FormData) =
             sameSite: "lax",
 
         });
+
+        
+        const decodedToken = jwt.decode(result.data.accessToken) as JwtPayload;
+
+        // console.log(decodedToken);
+
+        if(decodedToken.role === "CUSTOMER"){
+            redirect("/dashboard/customer");
+        } else if (decodedToken.role === "PROVIDER"){
+            redirect("/dashboard/provider");
+        } else if (decodedToken.role === "ADMIN"){
+            redirect("/dashboard/admin");
+        }
+
+
     }
     return result;
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navbar } from './_components/shared/navbar'
 
 const DashboardLayout = (
     {
@@ -8,9 +9,13 @@ const DashboardLayout = (
     }
 ) => {
   return (
+    <>
+    {/* <Navbar></Navbar> */}
     <div className=' max-w-7xl mx-auto'>
         {children} 
     </div>
+
+    </>
   )
 }
 

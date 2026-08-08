@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from '../(authGroup)/_components/shared/navbar'
 
-const DashboardLayout = (
+const GearGroupLayout = (
     {
         children
     } : {
@@ -16,4 +16,4 @@ const DashboardLayout = (
   )
 }
 
-export default DashboardLayout
+export default GearGroupLayout
