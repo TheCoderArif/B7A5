@@ -1,5 +1,6 @@
 import { Card } from '@/components/ui/card';
-import React from 'react'
+import  Link  from 'next/link'
+
 
 const page = async ({params}) => {
 
@@ -30,6 +31,8 @@ const page = async ({params}) => {
           <div>Quantity: {data.quantity}</div>
           <div>Available quantity: {data.available}</div>
           <div>Price per day: {data.pricePerDay} $</div>
+
+          <Link href={`/payment/success`}><button className='bg-blue-500 rounded-full px-2 py-1'>Buy Now</button></Link>
 
       </Card>
     </div>
