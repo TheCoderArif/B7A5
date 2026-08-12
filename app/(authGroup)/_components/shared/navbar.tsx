@@ -29,10 +29,10 @@ import { cn } from "@/lib/utils"
 import logOut from "@/app/service/logout"
 
 const navLinks = [
-  { label: "Dashboard", href: "#dashboard", icon: LayoutDashboard },
+  { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Gears", href: "/gear", icon: FolderKanban },
-  { label: "Analytics", href: "#analytics", icon: BarChart3 },
-  { label: "Team", href: "#team", icon: Users },
+  { label: "Log In", href: "/auth/login", icon: BarChart3 },
+  { label: "Register", href: "/auth/register", icon: Users },
 ]
 
 const userMenuItems = [

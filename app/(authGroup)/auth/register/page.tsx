@@ -1,8 +1,13 @@
 import React from 'react'
+import RegisterForm from '../../_components/registarForm';
 
 const registerPage = () => {
   return (
-    <div>registerPage</div>
+    <>
+    <div className="w-60 mx-auto my-3 py-20">
+      <RegisterForm></RegisterForm>
+    </div>
+    </>
   )
 }
 
