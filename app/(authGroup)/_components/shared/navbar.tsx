@@ -31,6 +31,7 @@ import logOut from "@/app/service/logout"
 const navLinks = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Gears", href: "/gear", icon: FolderKanban },
+  { label: "Add Gear", href: "/dashboard/provider/gear/new", icon: FolderKanban },
   { label: "Log In", href: "/auth/login", icon: BarChart3 },
   { label: "Register", href: "/auth/register", icon: Users },
 ]
