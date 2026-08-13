@@ -37,7 +37,7 @@ const AddGear = () => {
             <Input name="image" type="text" placeholder="Image link" required />
             <Input name="pricePerDay" type="number" placeholder="Price per day" required />
             <Input name="quantity" type="number" placeholder="Quantity" required />
-            <Input name="available" type="number" placeholder="How much available" required />
+            <Input name="available" type="number" placeholder="How much available?" required />
             {/* <Input name="available" type="number" placeholder="How much available" required /> */}
             {/* <Input name="role" type="role" placeholder="Role" required /> */}
 
